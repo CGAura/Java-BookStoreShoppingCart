@@ -43,6 +43,15 @@ public class ShoppingCart {
   this.dblOrderTotal = dblOrderTotal;
  }
 
+ public void deleteCartItem(int index) {
+	 try {
+		 cartItems.remove(index);
+	 } 
+	 catch (IndexOutOfBoundsException e) {
+		e.printStackTrace();
+	}
+ }
+ 
  protected void calculateOrderTotal() {
   double dblTotal = 0;
   for(int counter=0;counter<cartItems.size();counter++) {
